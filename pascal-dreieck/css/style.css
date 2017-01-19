@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+}
+
+table{
+    color: red;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+    border-spacing: 1.2em;
+}
+
