@@ -1,0 +1,19 @@
+body{
+	font-family: Calibri Light;
+    background: url("../pictures/background.jpg") no-repeat center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+
+#interface{
+    border: dashed black;
+    padding: 15px;
+}
+
+#cards img{
+	padding: 50px;
+    width: 15%;
+    height: auto;
+}
