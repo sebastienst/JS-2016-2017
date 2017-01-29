@@ -50,17 +50,16 @@ function game(){
         if (first_card_shuffle[0].endsWith(all[i]) && second_card_shuffle[0].endsWith(all[i]) && third_card_shuffle[0].endsWith(all[i])){
             three_same_cards = true;
             document.getElementById("purse").innerHTML = user_purse + user_bid * 2
-            alert("Gewinn : "  + user_bid * 2);
-            break;
+            alert("Sie haben dreimal dieselbe Farbe ! Sie bekommen : "  + user_bid * 2 + ".");
         }
     }
         
-    if (three_same_cards === true){
-        three_same_cards = false;
+    if (three_same_cards === false){
+		
         for(i = 0; i < red.length - 1; i++){
             if((first_card_shuffle[0].endsWith(red[i]) || first_card_shuffle[0].endsWith(red[i + 1])) && (second_card_shuffle[0].endsWith(red[i]) || second_card_shuffle[0].endsWith(red[i + 1])) && (third_card_shuffle[0].endsWith(red[i]) || third_card_shuffle[0].endsWith(red[i + 1]))){
                 document.getElementById("purse").innerHTML = user_purse + user_bid
-                alert("Gewinn : "  + user_bid);
+                alert("Sie bekommen ihren Einsatz von "  + user_bid + " zurück.");
                 break;
             }
         }
@@ -68,7 +67,7 @@ function game(){
         for(i = 0; i < black.length - 1; i++){
             if((first_card_shuffle[0].endsWith(black[i]) || first_card_shuffle[0].endsWith(black[i + 1])) && (second_card_shuffle[0].endsWith(black[i]) || second_card_shuffle[0].endsWith(black[i + 1])) && (third_card_shuffle[0].endsWith(black[i]) || third_card_shuffle[0].endsWith(black[i + 1]))){
                 document.getElementById("purse").innerHTML = user_purse + user_bid
-                alert("Gewinn : "  + user_bid);
+                alert("Sie bekommen ihren Einsatz von "  + user_bid + " zurück.");
                 break;
             }   
         }
