@@ -33,20 +33,20 @@ function game(){
     var user_purse = parseInt(document.getElementById("purse").innerHTML);
 	
     if(user_bid <= user_purse && user_bid > 0){
-        user_purse = user_purse - user_bid
+        user_purse = user_purse - user_bid;
         document.getElementById("purse").innerHTML = user_purse;
 		
 		displayCards();
 		
 		var black = ["clubs", "spades"];
 		var red = ["diamonds", "hearth"];
-		var all = ["diamonds", "hearth", "clubs", "spades"]
+		var all = ["diamonds", "hearth", "clubs", "spades"];
 		var three_same_cards = false;
 		
 		for(i = 0; i < all.length - 1; i++){
 			if (first_card_shuffle[0].endsWith(all[i]) && second_card_shuffle[0].endsWith(all[i]) && third_card_shuffle[0].endsWith(all[i])){
 				three_same_cards = true;
-				document.getElementById("purse").innerHTML = user_purse + user_bid * 2
+				document.getElementById("purse").innerHTML = user_purse + user_bid * 2;
 				alert("Sie haben dreimal dieselbe Farbe ! Sie bekommen : "  + user_bid * 2 + ".");
 			}
 		}
@@ -55,7 +55,7 @@ function game(){
 			
 			for(i = 0; i < red.length - 1; i++){
 				if((first_card_shuffle[0].endsWith(red[i]) || first_card_shuffle[0].endsWith(red[i + 1])) && (second_card_shuffle[0].endsWith(red[i]) || second_card_shuffle[0].endsWith(red[i + 1])) && (third_card_shuffle[0].endsWith(red[i]) || third_card_shuffle[0].endsWith(red[i + 1]))){
-					document.getElementById("purse").innerHTML = user_purse + user_bid
+					document.getElementById("purse").innerHTML = user_purse + user_bid;
 					alert("Sie bekommen ihren Einsatz von "  + user_bid + " zurück.");
 					break;
 				}
@@ -63,7 +63,7 @@ function game(){
 		
 			for(i = 0; i < black.length - 1; i++){
 				if((first_card_shuffle[0].endsWith(black[i]) || first_card_shuffle[0].endsWith(black[i + 1])) && (second_card_shuffle[0].endsWith(black[i]) || second_card_shuffle[0].endsWith(black[i + 1])) && (third_card_shuffle[0].endsWith(black[i]) || third_card_shuffle[0].endsWith(black[i + 1]))){
-					document.getElementById("purse").innerHTML = user_purse + user_bid
+					document.getElementById("purse").innerHTML = user_purse + user_bid;
 					alert("Sie bekommen ihren Einsatz von "  + user_bid + " zurück.");
 					break;
 				}   
@@ -72,8 +72,8 @@ function game(){
     } else{
 		
 		if (user_purse === 0){
-			document.getElementById("cards").innerHTML = "<h1>Sie haben kein Geld mehr in ihrer Börse übrig.</h1>"
-			document.getElementById("cards").innerHTML += "<br/><input type='button' value='Neu starten ?' onclick='restart()'/>"
+			document.getElementById("cards").innerHTML = "<h1>Sie haben kein Geld mehr in ihrer Börse übrig.</h1>";
+			document.getElementById("cards").innerHTML += "<br/><input type='button' value='Neu starten ?' onclick='restart()'/>";
 		} else {
 			if (user_bid === 0) {
 				alert("Der Einsatz muss höher als 0 sein !");
@@ -121,6 +121,6 @@ function restart(){
 }
 
 function main() {
-    createCards();
+	createCards();
     game();
 }
