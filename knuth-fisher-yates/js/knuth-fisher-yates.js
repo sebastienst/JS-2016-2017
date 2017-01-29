@@ -44,14 +44,14 @@ function game(){
     var black = ["clubs", "spades"];
     var red = ["diamonds", "hearth"];
     var all = ["diamonds", "hearth", "clubs", "spades"]
-    var three_same_cards = true;
+    var three_same_cards = false;
     
     for(i = 0; i < all.length - 1; i++){
         if (first_card_shuffle[0].endsWith(all[i]) && second_card_shuffle[0].endsWith(all[i]) && third_card_shuffle[0].endsWith(all[i])){
-            win + 1;
+            three_same_cards = true;
             document.getElementById("purse").innerHTML = user_purse + user_bid * 2
             alert("Gewinn : "  + user_bid * 2);
-            
+            break;
         }
     }
         
